@@ -1,7 +1,7 @@
 apiVersion: radix.equinor.com/v1
 kind: RadixApplication
 metadata:
-  name: slack-bot
+  name: slack-bot1
 spec:
   environments:
     - name: production
