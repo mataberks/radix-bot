@@ -35,6 +35,5 @@ In crontab add:
 
 ## Send test messages
 Use tool_pub
-.
 
 
