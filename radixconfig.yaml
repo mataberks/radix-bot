@@ -13,6 +13,8 @@ spec:
       ports:
       - name: http
         port: 3000
+      - namw: mqtt
+        port: 1883
       public: false
       monitoring: true
       resources:
