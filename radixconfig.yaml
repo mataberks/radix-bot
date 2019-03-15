@@ -1,0 +1,38 @@
+apiVersion: radix.equinor.com/v1
+kind: RadixApplication
+metadata:
+  name: slack-bot
+spec:
+  environments:
+    - name: production
+      build:
+        from: docker
+  components:
+    - name: bot
+      src: ./bot
+      ports:
+      - name: http
+        port: 3000
+      public: false
+      monitoring: true
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "150m"
+        limits:
+          memory: "128Mi"
+          cpu: "200m"
+      replicas: 1
+      environmentVariables:
+        - environment: production
+          variables:
+            PORT: 3000
+            NODE_ENV: "production"
+      secrets:
+        - BOT_ID
+        - SLACK_BOT_TOKEN
+        - MQTT_USERNAME
+        - MQTT_PASSWORD
+  dnsAppAlias:
+    environment: production
+    component: www
