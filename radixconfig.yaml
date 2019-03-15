@@ -6,7 +6,7 @@ spec:
   environments:
     - name: production
       build:
-        from: docker
+        from: master
   components:
     - name: bot
       src: ./bot
