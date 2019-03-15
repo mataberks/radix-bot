@@ -33,6 +33,3 @@ spec:
         - SLACK_BOT_TOKEN
         - MQTT_USERNAME
         - MQTT_PASSWORD
-  dnsAppAlias:
-    environment: production
-    component: www
